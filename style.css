@@ -1,0 +1,297 @@
+body{
+
+top:0px;
+  background-color:  rgb(217, 217, 236);
+
+}
+
+h1{
+  text-align: center;
+  color:red;
+  font-size: 42px;
+}
+h2{
+  color:red;
+  font-size: 98px;
+  text-align: center;
+  }
+
+  .wrapper{
+margin-bottom:45px;
+
+  }
+/* this is for the booklist */
+
+.bookshelf1{
+
+  margin-top: 12px;
+  display:flex;
+  flex-wrap: wrap;
+  background-color: #887146;
+
+}
+
+/* belongs to the second bookshelf */
+.bookshelf2{
+  
+  margin-top: 12px;
+  display:flex;
+  flex-wrap: wrap;
+  background-color: #887146;
+
+
+}
+
+/* class for the bookshelf 3 */
+.bookshelf3{
+
+  margin-top: 12px;
+  display:flex;
+  flex-wrap: wrap;
+  background-color: #887146;
+  border-color: #2c2a26;
+  border-width: 32px;
+}
+
+/*front when you look at it   */
+.book {
+  background-color: #b01a1ab8;
+  /* background-image: url("https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202234/1396/img13xl.jpg"); */
+  height: 285px;
+  position: centered;
+  margin-left: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(0) rotateY(0);
+  transition: transform 1s;
+}
+/* the borders of the book */
+.side {
+  position: absolute;
+  border: 3px solid rgb(226, 212, 190);
+  border-radius: 4px;
+
+
+  transform-origin: center left;
+}
+/* grabs all the sides the book */
+.spine {
+  position: relative;
+  width: 48px;
+  height: 280px;
+
+
+
+  transform: rotateY(0deg) translateZ(0px);
+}
+/* the title of the book, what you read  */
+.spine-title {
+  margin: 2px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+/* the autho name , you see  */
+.spine-author {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  bottom: 0px;
+  left: 20%; /* no idea why 20% centers it */
+  font-size: 8px;
+}
+
+.top {
+  width: 50px;
+  height: 190px;
+  top: -2px;  /* hmm, why -2 and not 0? */
+  background-image: linear-gradient(90deg, rgb(255, 255, 255) 90%, rgb(78, 77, 77) 10%);
+  background-size: 5px 5px;
+  transform: rotateX(90deg) translateZ(95px) translateY(-95px);
+}
+
+.cover {
+  width: 190px;
+  height: 280px;
+  top: 0px;
+  background-color: #e79a52;
+
+  background-size: contain;
+  background-repeat: round;
+  left: 50px;
+  transform: rotateY(90deg) translateZ(0);
+  transition: transform 1s;
+}
+
+.book:hover {
+  z-index: 1;
+  transform: rotateX(-25deg) rotateY(-40deg) rotateZ(-15deg) translateY(50px)
+    translateX(-30px);
+}
+/* this is for the navbar */
+
+.bkgimage{
+    width: 100%;
+  background-repeat: no-repeat; 
+    position: absolute;
+    background-image: url("https://cdn2.teebooks.com/3611-thickbox_default/wall-bookshelves-2362-inches-long-set-of-6.jpg");
+    background-size: cover; 
+    min-height: 100%;
+    background-repeat: no-repeat; 
+  }
+
+  .bkgimage2{
+    
+    background-repeat: no-repeat; 
+   
+      background-image: url("https://www.gifgit.com/site-images/toolpage-images/gradient-tool-example1.jpg");
+      background-size: cover; 
+      size:34px;
+   }
+
+
+  .imageBookList {
+    background-repeat: no-repeat; 
+ 
+    background-image: url("https://cdn2.teebooks.com/3611-thickbox_default/wall-bookshelves-2362-inches-long-set-of-6.jpg");
+    background-size: cover; 
+    min-height: 100%;
+    background-repeat: no-repeat; 
+    
+  }
+  
+
+
+
+.navbar {
+ 
+  width: 100%;
+  background-color: rgb(217, 217, 217);
+  overflow: auto;
+
+}
+  
+  /* Style the navigation bar links */
+  .navbar a {
+    float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 25%; /* Four links of equal widths */
+  text-align: center;
+  }
+  
+
+ 
+  /* Change color on hover */
+  .navbar a:hover {
+    background-color: rgba(173, 3, 3, 0.272);
+    color: rgba(0, 0, 0, 0.349);
+   
+   }
+   /* .navbar a.active {
+    /* background-color: #04AA6D; */
+   /* } */ 
+
+   @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+  /* TITLE FOR INDEX.HTML NAME FOR THE WEBSITE */
+  .titnamelewebsite{
+ 
+  color: rgba(255, 0, 0, 0.836);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 99px;
+  text-align: center;
+  margin-left: 900px;
+  margin-bottom: 820px;
+  top:89px;
+}
+.banner{
+ 
+ font-size: 44px;
+ margin-left:580px ;
+ margin-bottom: 420px;
+ color: rgb(0, 0, 0);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bold;
+ 
+
+
+}
+
+/* llllllllllllllllllllllllllllllllllllllllllllllllllll */
+/* 
+
+
+/* Bordered form */
+
+
+/* Full-width inputs */
+
+
+
+ button {
+  background-color: #9bb4ab;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+.containerBookshelf{
+  margin-left: 400px;
+  margin-right: 800px;
+  box-sizing: border-box;
+  color:#f44336
+}
+.suggestBooks{
+  color:#f44336;
+}
+
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
