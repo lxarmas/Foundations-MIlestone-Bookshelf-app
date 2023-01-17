@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=hello, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -15,30 +15,63 @@
     <a href="contact.html">Contact</a>
     
     <a href="bookshelf.html">Bookshelf</a>
-    <a href="search.html">Add Books</a>
+    <a href="search.html">Com Books</a>
     <a href="login.html">Log In</a>
   </div>
 
 
-
-    <div class="wrapper"></div>
-    <div class="selectionBooks">
-
-
-    <!-- each on his own id accoording to title,author and language -->
-      <button id="title">TITLE</button>
-      <button id="author">AUTHOR</button>
-      <button id="language">LANGUAGE</button>
-    </div>
-    <div class="imagesbooklist">
+ <div class="imagesbooklist">
 
       <img src="https://res.cloudinary.com/highereducation/image/upload/v1533591754/TheBestColleges.org/featured_libraries.jpg" alt="Trulli" width="300" >
       <img src="https://res.cloudinary.com/highereducation/image/upload/v1533591754/TheBestColleges.org/1-library-of-congress.jpg" alt="Trulli" width="300" >
       <img src="https://res.cloudinary.com/highereducation/image/upload/v1533591754/TheBestColleges.org/5-vatican-library.jpg" alt="Trulli" width="269" >
 
-
-    </div>
     
+      <br>
+         <label for="Name">Title</label> 
+          <input id="name" type="text">
+        <br> 
+       
+      <br>
+        <label for="Age">Author</label>
+      <input id="age" type="text">
+      <br>
+      <br>   
+       <label for="city">Language</label>
+      <input id="City" type="text">
+      <br>
+       
+      <br>
+     <input type="button" value="Save Book" onclick="savedata()">
+      <input type="button" value="Add Book" onclick="displayData()">
+      <br>
+   </form>
+   <div id="display"></div>
+ 
+  
+    
+    <!-- This will create a search field on the web page -->
+    <form id="search-books">
+      <label for="search">Search:</label>
+      <input type="text" name="search" id="search">
+      <button name="search_btn">Search</button>
+      <button name="reset" type="reset">Reset</button>
+    </form>
+    <!-- The render() function takes an array of JSON objects 
+      as its parameter. It then maps over the array to create 
+      an HTML list of books and displays the list in -->
+    <div id="app"></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
     
     
     

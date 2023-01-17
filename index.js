@@ -1,240 +1,160 @@
 
 
-
-//data
-
-const cl =(x)=>{
-  console.log(x);
-}
-
-const data = [
+const books = [
   {
-      front:"Tarzan of the Apes",
-     diff:"title"
+    "title": "Cracking the coding interview",
+    "subtitle":"189 programming questions and solutions",
+    "author":"Gayle Laakmann McDowell",
+    "category":"Programming",
+    "language":"Quechua"
   },
   {
-      front:"Crime and Punishment",
-     diff:"title"
+    "title": "No friend but the keywords",
+    "subtitle":"Writing from Ale's prison",
+    "author":"Behrouz Boochani",
+    "category":"Literature",
+    "language":"Mandarin"
   },
   {
-      front:"Dracula",
-      diff:"title"
+    "title": "the new Indian Cuisine",
+    "subtitle":"Classic and contemporary vegetarian dishes",
+    "author":"Vikas Khanna",
+    "category":"Cuisine",
+    "language":"Bantu"
   },
   {
-      front:"To the Lighthouse",
-      diff:"title"
+    "title": "Upheaval",
+    "subtitle":"Turning points for nations in crisis",
+    "author":"Jared Diamond",
+    "category":"Politics",
+    "language":"English"
   },
-
-
   {
-  front:"Wunder Heights",
-  diff:"title"
-},
-{
-  front:"Full Metal Jacket",
-  diff:"title"
-},
-{
-  front:"Un mundo para Julius",
-  diff:"title"
-},
-{
-  front:"Rayuela",
-  diff:"title"
-},
-
-{
-  front:"The life of Tarzan",
- diff:"title"
-},
-{
-  front:"Crime and Punishment",
- diff:"title"
-},
-{
-  front:"Dracula",
-  diff:"title"
-},
-{
-  front:"To the Lighthouse",
-  diff:"title"
-},
-
-
-{
-front:"Wunder Heights",
-diff:"title"
-},
-{
-front:"Full Metal Jacket",
-diff:"title"
-},
-{
-front:"Un mundo para Julius",
-diff:"title"
-},
-{
-front:"Rayuela",
-diff:"title"
-},
-{
-  front:"William Burroughs",
-  diff:'author'
-},
-{
-  front:"Dostoiesvky",
-  diff:'author'
-},
-{
-  front:"Bram Stroker",
-  diff:'author'
-},
-{
-  front:"Virginia Wolf",
-  diff:'author'
-},
-{
-  front:"Stanley Kubrick",
- diff:'author'
-},
-{
-  front:"Alfredo Bryce Echenique",
- diff:"author"
-},
-{
-  front:"Cortazar",
- diff:"medium"
-},
-{
-  front:"English",
-  diff:"hard"
-},
-{
-  front:"Russian",
-  diff:"language"
-},
-{
-  front:"English",
-  diff:"language"
-},
-{
-  front:"English",
-  diff:"language"
-},
-{
-  front:"English",
-  diff:"language"
-},
-{
-  front:"English",
-  diff:"language"
-},
-{
-  front:"Spanish",
-  diff:"language"
-},
-{
-  front:"Spanish",
-  diff:"language"
-},
-{
-  front:"English",
-  diff:"language"
-},
-
+    "title": "Algorithms",
+    "subtitle":"Fourth Edition",
+    "author":"Robert Sedgewick, Kevin Wayne",
+    "category":"Programming",
+    "language":""
+  },
+  {
+    "title": "How We Die",
+    "subtitle":"Reflections on Life's Final Chapter",
+    "author":"Sherwin B. Nuland",
+    "category":"Literature",
+    "language":"Creole"
+  },
+  {
+    "title": "The Circle",
+    "subtitle":"",
+    "author":"Dave Eggers",
+    "category":"Fiction",
+    "language":"Portuguese"
+  },
+  {
+    "title": "The Algorithm Design Manual",
+    "subtitle":"",
+    "author":"Steven S. Skiena",
+    "category":"Programming",
+    "language":"Danish"
+  },
+  {
+    "title": "I Contain Multitudes",
+    "subtitle":"The microbes within us and a grander view of life",
+    "author":"Ed Yong",
+    "category":"Science",
+    "language":"Russian"
+  },
+  {
+    "title": "The Silkwarm",
+    "subtitle":"A Cormoran Strike Novel",
+    "author":"Robert Galbraith",
+    "category":"Literature",
+    "language":"Polish"
+  },
+  {
+    "title": "Cosmos",
+    "subtitle":"",
+    "author":"Carl Sagan",
+    "category":"Science",
+    "language":"German"
+  },
+  {
+    "title": "Comanche Moon",
+    "subtitle":"",
+    "author":"Larry McMurtry",
+    "category":"Science",
+    "language":"French"
+  },
+  {
+    "title": "Nine Pints",
+    "subtitle":"A journey through the money, medicine, and mysteries of blook",
+    "author":"Rose George",
+    "category":"Science",
+    "language":"Spanish"
+  },
 ]
 
 
-// make a class
-class Book {
-  constructor(bk) {
-      this.book=bk;
-      this.flip=false;
-      this.ele =document.createElement("div");
-      this.front = document.createElement("div");
-      this.back = document.createElement("div");
-  }
 
-  initEle(){
-    const that=this;
-    this.front.innerHTML=this.book.front;
-    this.back.innerHTML=this.book.back;
-    this.ele.appendChild(this.front);
-    this.ele.appendChild(this.back);
-    document.body.querySelector(".wrapper").appendChild(this.ele);
-    this.checkFlip();
-    this.ele.addEventListener("click", function(){
-        that.flipCard();
-    })
-  }
+let render = function(data) {
+  let app = document.getElementById('app');
+  let booksHTMLString = '<ul>'+
+    data.map(function(book){
+      return '<li>'+
+              '<strong>Title: </strong>' + book.title + '<br/>' +
+              '<strong>Subtitle: </strong>' + book.subtitle + '<br/>' +
+              '<strong>Author: </strong>' + book.author + '<br/>' +
+              '<strong>Category: </strong>' + book.category + '<br/>' +
+              '<strong>Language: </strong>' + book.language + '<br/>' +
+            '</li>';
+    }).join('');
+    + '</ul>';
 
-  checkFlip(){
-      if(this.flip){
-         this.back.style.display="block";
-         this.front.style.display="none";
-      }else{
-          this.back.style.display="none";
-          this.front.style.display="block";
+  app.innerHTML = booksHTMLString;
+}
+render(books);
+
+function mySearch(event) {
+  event.preventDefault();  //stops the page from reloading upon submission.
+  // Get the user string from the input field
+  let searchUser = event.target.elements['search'].value;
+  // Tokenize the search terms and remove empty spaces
+  let tokens = searchUser
+    .toLowerCase() 
+    .split(' ')
+    .filter(function (token) {
+      return token.trim() !== '';
+    });
+    // We split the search string into individual tokens and remove any white space.
+    // searchUser = "Cracking the Coding Interview"
+    // tokens = ["cracking","the","coding","interview"]
+  
+    if (tokens.length) {
+    //  Create a regular expression of all the search data from the user
+    let searchUserRegex = new RegExp(tokens.join('|'), 'gim');
+    let filteredList = books.filter(function (book) {
+      // Create a string of all object values
+      let bookString = '';
+      for (let key in book) {
+        if (book.hasOwnProperty(key) && book[key] !== '') {
+          bookString += book[key].toString().toLowerCase().trim() + ' ';
+        }
       }
-  }
-
-  flipBookgit(){
-      this.flip=!this.flip;
-      this.checkFlip();
+      // Return book objects where a match with the search regex if found
+      return bookString.match(searchUserRegex);
+    });
+    // Render the search results
+    render(filteredList);
   }
 }
 
-//init app
-class App{
-  constructor(){
-      this.books=data;
-      this.rendered=[];
-  }
-
-  render(){
-      document.body.querySelector(".wrapper").innerHTML="";
-      this.rendered=this.books.map((x)=>
-          new Book(x).initEle()
-      )
-  }
-
-  filterQuestions(dif){
-      document.body.querySelector(".wrapper").innerHTML="";
-      this.rendered=this.books.filter((x)=>{
-          if(x.diff===dif){
-              cl(x);
-              return new Book(x).initEle()
-          }
-      })
-  }
-
-}
-
-const app =new App();
-
-app.render();
-
-document.body.querySelector("#title").addEventListener("click", function(){
-  app.filterQuestions("title")
+document.addEventListener('submit', mySearch);
+document.addEventListener('reset', function(event){
+  event.preventDefault();
+  render(books);
 })
-
-document.body.querySelector("#author").addEventListener("click", function(){
-  app.filterQuestions("author")
-})
-
-document.body.querySelector("#language").addEventListener("click", function(){
-  app.filterQuestions("language")
-})
-
-// //////////////////////////////////////////////
 
 //this is to picked the book and leave a comment
-
-
-
-
-
-
 
 function myFunction() {
   let y = document.createElement("INPUT");
@@ -246,16 +166,16 @@ function myFunction() {
 
 
 function myFunction2() {
-  document.getElementById("demo").innerHTML = "Tarzan is a series of 24 adventure novels written by Edgar Rice Burroughs (1875–1950) and published between 1912 and 1966";
+  document.getElementById("demo").innerHTML = "Cracking the Code is a great book to nail your programming interviews";
 }
 
 
 function myFunction3() {
-  document.getElementById("demo3").innerHTML = "is a novel by the Russian author Fyodor Dostoevsky. It was first published in the literary journal The Russian Messenger in twelve monthly installments during 1866.";
+  document.getElementById("demo3").innerHTML = "No friend but the keywords will take you to a different paths to cover the new reals of programming";
 }
 
 function myFunction4() {
-  document.getElementById("demo4").innerHTML = "is a novel by Bram Stoker, published in 1897. An epistolary novel, the narrative is related through letters, diary entries, and newspaper articles. It has no single protagonist.";
+  document.getElementById("demo4").innerHTML = "Get ready for a new lifestyle with this exemplary set of vegetarian dishes";
 }
 
 function myFunction5() {
@@ -277,3 +197,29 @@ function myFunction8() {
 function myFunction9() {
   document.getElementById("demo9").innerHTML = "Julio Cortazar's Masterpiece";
 }
+
+
+var arrCitys=new Array();
+var arrNames=new Array();
+var arrAges=new Array();
+ 
+function savedata(){
+    let name = document.getElementById('name').value;
+    let city = document.getElementById('City').value;
+    let age = document.getElementById('age').value;
+    arrCitys[arrCitys.length]=city;    
+    arrNames[arrNames.length]=name;
+    arrAges[arrAges.length]=age;
+  }
+   
+ 
+function displayData() 
+{
+  let content="<b>Data Entered by User :</b><br>";
+  content+= [...arrNames]+"</br>";
+  content+=[...arrCitys]+"</br>";
+  content+=[...arrAges]+"</br>";
+ 
+  document.getElementById('display').innerHTML = content;
+}
+ 
